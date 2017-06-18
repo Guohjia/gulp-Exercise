@@ -14,12 +14,12 @@ var cssnano=require('gulp-cssnano');   //压缩css
     browserSync=require('browser-sync').create(),　//启动服务，实现浏览器重载等
     rev=require('gulp-rev'),   //添加版本号
     revReplace=require('gulp-rev-replace')   //版本号替换
-    useref=require('gulp-useref')  //解析html资源定位
+    useref=require('gulp-useref')  //解析html资源定位,划分区块，生成目标文件
 
 
 gulp.task('dist:css',function(){
     return gulp.src('./css/*.css')
-        .pipe(concat('index-merge-3.css'))
+        .pipe(concat('merge.css'))
         .pipe(autoprefixer('last 2 version'))
         .pipe(cssnano())
         .pipe(gulp.dest('dist/css/'))
@@ -34,7 +34,7 @@ gulp.task('dist:js',function(){
             .pipe(gulp.dest('dist/scripts/'))
 })
 
-gulp.task('images',function(){
+gulp.task('dist:images',function(){
     return gulp.src('./images/*')
             .pipe(imagemin())
             .pipe(gulp.dest('dist/images/'))
@@ -45,6 +45,28 @@ gulp.task('clean',function(){
             .pipe(clean())
 })
 
+
+
+gulp.task("revision",['dist:css','dist:js','dist:images'],function(){
+    return gulp.src(["dist/**/*.css","dist/**/*.js"])
+        .pipe(rev())   //添加版本号
+        .pipe(gulp.dest('dist'))
+        .pipe(rev.manifest()) //生成一个json文件记录版本号
+        .pipe(gulp.dest('dist'))
+})
+
+gulp.task("index",["revision"],function(){
+    var  manifest=gulp.src("./dist/rev-manifest.json")  
+    
+    return gulp.src("index.html")
+        .pipe(revReplace({manifest:manifest}))
+        .pipe(useref())  
+        .pipe(gulp.dest('dist'))
+})
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('index');                    //输入gulp,开始进行上述所有步骤，css,js,img压缩合并,自动替换，生成新的index.html,直接发布
+});
 
 gulp.task('reload',function(){
     return browserSync.reload();
@@ -58,17 +80,3 @@ gulp.task('server',function(){                   //gulp server开启服务器
     });
     gulp.watch(['**/.css','**/.js','**/*.html'],['reload'])   //监听文件，发生改变则自动重新加载
 })
-
-gulp.task('default', ['clean'], function() {
-  gulp.start('dist:css','dist:css','images');
-});
-
-
-gulp.task("revision",['dist:css','dist:js'],function(){
-    return gulp.src(["dist/**/*.css","dist/**/*.js"])
-        .pipe(rev())   //添加版本号
-        .pipe(gulp.dest('dist'))
-        .pipe(rev.manifest()) //生成一个json文件记录版本号
-        .pipe(gulp.dest('dist'))
-})
-
