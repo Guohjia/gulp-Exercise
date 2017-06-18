@@ -1,0 +1,272 @@
+            body {
+                background: url(../images/background.png) no-repeat top center;
+                background-size: cover; 
+                box-sizing: border-box;
+                margin: 0;
+                font-family: serif;
+            }
+            ul{
+                padding: 0;
+            }
+            li{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color:#000;
+            }
+            .page {
+                width: 990px;
+                /*height: 1200px;*/
+                margin: 0 auto;
+                /*border:1px solid orange;*/
+                position: relative;
+            }
+            .guide{
+                height: 103px;
+            }
+            .basic{
+                position: absolute;
+                /*border:1px solid;*/
+                right:0
+            }
+            .basic li{
+                float: right;
+                margin-top:-8px;
+                padding: 0 10px;
+            }
+            /*.basic li a{
+                color:#000;
+            }*/
+            .clearfix::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .search {
+                position: absolute;
+                right: 0;
+                top:75px;
+            }
+            .search input[type="submit"]{
+                margin-left: 10px;
+                padding: 4px 8px;
+                opacity: .85
+            }
+            .header-nav {
+                background: rgb(179, 228, 121);
+                padding:0;
+            }
+            .header-nav li{
+                float: left;
+                padding: 12px 32px;
+                margin-top:1px;
+                margin-right: 90px;
+            }
+            .header-nav li a{
+                color:rgb(23, 77, 1)
+            }
+            .header-nav li:last-child{
+                margin-right: -40px;
+            }
+            .active {
+                background:rgb(236, 238, 241)
+            }
+            .sidebar,.carousel{
+                height:340px;
+                float: left;
+            }
+            .sidebar {
+                width:292px;
+                background:rgba(184, 225, 140,.6);
+                
+            }
+            .content .sidebar:first-child{
+                box-shadow: 5px 3px 3px 1px rgb(205, 223, 188);
+            }
+            .content .sidebar:last-child{
+                box-shadow: -5px 3px 3px 1px rgb(205, 223, 188);
+            }
+            .intro>li a:hover{
+                color:rgb(23, 77, 1)
+            }
+            .carousel {
+                width:388px;
+                margin:0 8px;
+                /*border: 1px solid blue;*/
+            }
+            .content-first {
+                margin-top:8px;
+                width:90%;
+            }
+            span {
+                padding:0 3px 0 20px;
+                /*border: 1px  solid;*/
+            }
+            .more {
+                float: right;
+                font-size:12px;
+            }
+            .more a:hover{
+                color:red;
+            }
+            .intro{
+                padding-left: 15px;
+                height:0px;
+                overflow: hidden;
+                transition: all 0.5s ease-in;
+            }
+            .click:hover{
+                cursor: pointer;
+                color:rgb(0, 124, 65);
+            }
+            /*.content:hover .intro{
+                
+                height: 100px;
+            }*/
+            .intro li{
+                float: left;
+                padding: 10px 0 10px 0;
+            }
+            .intro a{
+                font-size:14px;
+                color:rgb(135, 123, 123)
+            }
+            .dot {
+                margin-right: 1px;
+            }
+            .content-middle,.content-bottom{
+                width: 90%;
+                padding: 15px 0;
+                border-top:2px solid rgb(181, 181, 181);
+            }
+            .design-content {
+                margin: 8px 10px 0;
+            }
+            .design-content p{
+                color:rgb(135, 123, 123);
+                line-height: 30px;
+                font-size:14px;
+            }
+            .design-bottom{
+                border-top:2px solid rgb(181, 181, 181);
+                margin-top: 15px;
+                padding: 18px 0;
+            }
+            .design-bottom span{
+                color:rgb(77, 105, 54);
+                padding: 0;
+            }
+            .aboutUs-bg{
+                margin-top:20px;
+                background: rgba(255, 255, 255, .3);
+                /*border:1px solid slateblue*/
+            }
+            .aboutUs{
+                margin:0 10px ;
+            }
+            .aboutUs-header {
+                padding-top:5px;
+            }
+            .aboutUs-content .aboutUS-img p{
+                font-size:14px;
+                line-height: 35px;
+                color:rgb(81, 78, 78);
+            }
+            .aboutUS-img img{
+                float: right;
+            }
+            .first-img{
+                margin: 0 1em 0 8em;
+                /*margin-left:10px;*/
+            }
+            .bg-2 li>a:hover{
+                text-decoration: underline;
+            }
+            .design-container{
+                padding: 10px 0;
+                margin:0 10px;
+                height: 220px;
+            }
+            /*.design-img img{
+                float: left;
+                vertical-align: bottom;
+            }*/
+            .design-garden{
+                /*border:1px solid red;*/
+                position: relative;
+            }
+            .type-1,.type-2{
+                position: absolute;
+                z-index: 9999;
+                margin-left: 17px;
+            }
+            .type-2 {
+                top:33px;
+            }
+            .type-1 li:nth-child(4){
+                margin-right:110px;
+            }
+            .type-1 li:nth-of-type(4n+1){
+                border-right: 1px solid rgb(81, 78, 78);;
+            }
+            .type-2 li:first-child,.type-2 li:nth-child(4){
+                border-right:1px solid rgb(81, 78, 78);;
+            }
+            .type-2 li:nth-child(3) {
+                margin-right:74px;
+            }
+            .design-garden li{
+                float: left;
+                /*border:1px solid;*/
+                padding:1px 3px;
+                font-size:14px;
+                z-index: 3;
+            }
+            .design-garden li a{
+                color:rgb(81, 78, 78);
+            }
+            .img-ct{
+                /*border: 1px solid;*/
+                position: absolute;
+                top:0;
+                z-index: 0;
+                /*position: relative;*/
+            }
+            .link-1,.link-2{
+                width:859px;
+                margin:10px auto;
+            }
+            .link li{
+                float: left;
+                padding: 4px 8px;
+            }
+            .link li a{
+                font-size: 14px;
+                color:rgba(30, 30, 30, .9)
+            }
+            .bg-2{
+                background: rgba(255, 255, 255, .3);
+            }
+            .footer{
+                font-size:12px;
+                text-align: center
+            }
+            .footer li{
+                float: left;
+                padding: 0 3px;
+                border-right:1px solid;
+            }
+            .footer li:hover{
+                text-decoration: underline;
+            }
+            .footer ul{
+                width:507px;
+                margin: 0 auto;
+            }
+            footer{
+                margin-top:10px;
+            }
+
+            /*CSS3实现轮播*/
+            

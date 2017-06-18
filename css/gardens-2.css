@@ -1,0 +1,27 @@
+.carousel{
+                height:340px;
+            }
+            .carousel img{
+                height:340px;
+                width:390px;
+                position: absolute;
+                opacity: 0;
+            }
+            @keyframes fade {
+                0%{opacity:0}
+                5%{opacity:1}
+                20%{opacity:1}
+                25%{opacity:0}
+            }
+            .carousel img:nth-child(1){
+                animation: fade 12s linear 0s infinite;
+            }
+            .carousel img:nth-child(2){
+                animation: fade 12s linear 3s infinite;
+            }
+            .carousel img:nth-child(3){
+                animation: fade 12s linear 6s infinite;
+            }
+            .carousel img:nth-child(4){
+                animation: fade 12s linear 9s infinite;
+            }
